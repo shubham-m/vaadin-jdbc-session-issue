@@ -4,6 +4,8 @@ import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.session.SaveMode;
+import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
 
 /**
  * The entry point of the Spring Boot application.
@@ -13,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
+@EnableJdbcHttpSession(saveMode = SaveMode.ON_GET_ATTRIBUTE)
 @Theme(value = "my-app")
 public class Application implements AppShellConfigurator {
 
